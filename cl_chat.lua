@@ -12,7 +12,9 @@ RegisterNetEvent('chat:removeSuggestion')
 RegisterNetEvent('chat:clear')
 
 
-RegisterCommand('clearchat', 'chat:clear', false)
+RegisterCommand('clearchat', function()
+  TriggerEvent('chat:clear')
+end, false)
 
 -- internal events
 RegisterNetEvent('__cfx_internal:serverPrint')
