@@ -7,6 +7,11 @@ RegisterServerEvent('_chat:messageEntered')
 RegisterServerEvent('chat:clear')
 RegisterServerEvent('__cfx_internal:commandFallback')
 
+RegisterCommand('aclearchat', function()
+    TriggerClientEvent('chat:clear', -1)
+end, true)
+  
+
 AddEventHandler('_chat:messageEntered', function(author, color, message)
     if not message or not author then
         return
