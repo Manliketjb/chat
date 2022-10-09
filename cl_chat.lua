@@ -11,11 +11,6 @@ RegisterNetEvent('chat:addSuggestions')
 RegisterNetEvent('chat:removeSuggestion')
 RegisterNetEvent('chat:clear')
 
-
-RegisterCommand('clearchat', function()
-  TriggerEvent('chat:clear')
-end, false)
-
 -- internal events
 RegisterNetEvent('__cfx_internal:serverPrint')
 
@@ -36,6 +31,11 @@ AddEventHandler('chatMessage', function(author, ctype, text)
     }
   })
 end)
+
+RegisterCommand('clearchat', function(source, args)
+  TriggerEvent('chat:clear')
+end, false)
+
 
 AddEventHandler('__cfx_internal:serverPrint', function(msg)
 
