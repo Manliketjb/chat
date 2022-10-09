@@ -4,13 +4,8 @@ RegisterServerEvent('chat:addMessage')
 RegisterServerEvent('chat:addSuggestion')
 RegisterServerEvent('chat:removeSuggestion')
 RegisterServerEvent('_chat:messageEntered')
-RegisterServerEvent('chat:clear')
+RegisterServerEvent('chat:ClearChat')
 RegisterServerEvent('__cfx_internal:commandFallback')
-
-RegisterCommand('aclearchat', function()
-    TriggerClientEvent('chat:clear', -1)
-end, true)
-  
 
 AddEventHandler('_chat:messageEntered', function(author, color, message)
     if not message or not author then
